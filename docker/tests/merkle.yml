@@ -1,0 +1,5 @@
+client_timeout: 5s # "s" stands for "seconds"
+first_piece_index: 0
+last_piece_index: 9
+icons_hash: a287d3f91adfc2b0437f9eaf3922a27a0dcdec2d880b62fd65653a9669022e76
+server_url: http://merkle-server:8080

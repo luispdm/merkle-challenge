@@ -1,0 +1,24 @@
+services:
+
+  merkle-tests:
+    container_name: merkle-tests
+    build:
+      context: ../
+      dockerfile: docker/tests/Dockerfile
+    depends_on:
+      merkle-server:
+        condition: service_healthy
+
+  merkle-server:
+    container_name: merkle-server
+    build:
+      context: ../
+      dockerfile: docker/server/Dockerfile
+    ports:
+      - 8080:8080
+    healthcheck:
+      test: ["CMD", "curl", "-I", "http://localhost:8080/hashes"]
+      interval: 5s
+      timeout: 120s
+      retries: 24
+      start_period: 3s

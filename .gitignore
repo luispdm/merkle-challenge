@@ -1,0 +1,6 @@
+.DS_Store
+config.yml
+settings.json
+launch.json
+merkle.test
+coverage/
